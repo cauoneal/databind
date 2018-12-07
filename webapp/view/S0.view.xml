@@ -1,0 +1,37 @@
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" controllerName="db.data_binding.controller.S0" 
+displayBlock="true"
+xmlns:core="sap.ui.core">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+			<content>
+			    <Toolbar width="100%" id="toolbar1">
+			    <content>
+			        <Text text="{/A_SalesOrderType}"/>
+			        <!-- OU -->
+			        <Text text="{path: '/nome', formatter:'.convertUpper' }"/>
+			        <Text id='sobrenome'/>
+			        <Input value="{/endereco/cidade} / {/endereco/estado}"/>
+			        <ComboBox items =  "{/A_SalesOrderType}">
+			        	<items>
+			        		<core:Item key="{}" text="{}"/>
+			        	</items>			        
+			        </ComboBox>
+			        <ComboBox selectedKey="{create>/chaveSelecionada}" items =  "{/skills}">
+			        	<items>
+			        		<core:Item key="{id}" text="{nome}"/>
+			        	</items>
+			        </ComboBox>
+			         <Text text= "{create>/chaveSelecionada}"/>
+			         <!-- OU -->
+			        <!-- <Text text="{path: '/chaveSelecionada', model: 'create'}"/>-->
+			    </content>
+			    </Toolbar>
+			</content>
+			</Page>
+			<Button/>
+		</pages>
+	</App>
+</mvc:View>
